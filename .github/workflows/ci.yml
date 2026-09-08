@@ -26,4 +26,10 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run tests
-        run: pytest
+        run: |
+          pwd
+          ls -la
+          find . -maxdepth 2 -type f
+          python -c "import sys; print(sys.path)"
+          python -c "import app; print(app)"
+          pytest
